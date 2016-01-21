@@ -1,0 +1,36 @@
+#version 400 core
+
+in vec2 pass_textureCoords;
+
+out vec4 out_color;
+
+uniform vec3 color;
+uniform sampler2D fontAtlas;
+uniform float alpha;
+
+const float width = 0.5;
+const float edge = 0.1;
+
+const float borderWidth = 0.0;
+const float borderEdge = 0.0;
+
+const vec2 offset = vec2(0.0, 0.0);
+
+const vec3 outlineColor = vec3(0.2, 0.2, 0.2);
+
+void main(void){
+    float distance = 1.0 - texture(fontAtlas, pass_textureCoords).a;
+    float alphaStep = 1.0 - smoothstep(width, width + edge, distance);
+
+    float distance2 = 1.0 - texture(fontAtlas, pass_textureCoords + offset).a;
+    float outlineAlpha = 1.0 - smoothstep(borderWidth, borderWidth + borderEdge, distance2);
+
+    float overallAlpha = alphaStep + (1.0 - alphaStep) * outlineAlpha;
+    if (alpha < overallAlpha) {
+        overallAlpha = alpha;
+    }
+    vec3 overallColor = mix(outlineColor, color, alphaStep / overallAlpha);
+
+    out_color = vec4(overallColor, overallAlpha);
+
+}

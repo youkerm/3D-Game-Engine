@@ -1,0 +1,10 @@
+#WORLD META DATA
+#CREATED BY MITCH YOUKER 2014
+
+#background	redTexture	greenTexture	blueTexture
+grassy	dirt	pinkFlowers	path
+
+#water tiles
+100,100,0
+
+#END

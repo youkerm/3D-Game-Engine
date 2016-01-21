@@ -1,0 +1,8 @@
+#OBJECT LIST
+#CREATED BY MITCH YOUKER 2014
+#id	Model	Texture	
+
+1	fern	fern
+2	tree	tree
+3	lowPolyTree	lowPloyTree
+#END

@@ -1,0 +1,8 @@
+#OBJECT SPAWN LIST
+#CREATED BY MITCH YOUKER'S WORLD EDITOR IN 2014
+#true = 1
+#false = 0
+#ID	X	Y	Z	RotX	RotY	RotZ	Scale	Lighting Transparent shine reflect
+1	33.0	0	60.0	0.0	0.0	0.0	1.0	0	0	1.0	0.0
+2	50.0	0	60.0	0.0	0.0	0.0	2.25	0	0	1.0	0.0
+#END
